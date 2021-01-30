@@ -1,0 +1,50 @@
+{
+  "name": "Pedido",
+  "fields": [
+    {
+      "fieldName": "uuid",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "data",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "endereco",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ativo",
+      "fieldType": "Boolean",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "pedidoItem",
+      "otherEntityRelationshipName": "pedido",
+      "relationshipName": "pedidoItem"
+    }
+  ],
+  "changelogDate": "20210130022514",
+  "entityTableName": "pedido",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "test",
+  "applications": "*",
+  "microserviceName": "test"
+}
