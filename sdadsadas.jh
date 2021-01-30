@@ -1,0 +1,43 @@
+entity Produto {
+	valor String required,
+    nome String,
+    description String
+}
+
+entity Pedido {
+	uuid String required,
+    data String required,
+    endereco String,
+    ativo Boolean required
+}
+
+entity PedidoItem {
+	quantidade String,
+    valorDoItem String,
+    valorTotal String,
+	observacaoo String
+}
+
+entity Usuario {
+	nome String,
+	telefone String,
+    endereco String
+}
+
+relationship OneToOne {
+	PedidoItem{produto} to Produto
+}
+
+relationship OneToOne {
+	PedidoItem{cliente} to Usuario
+}
+
+
+relationship OneToMany {
+	Pedido to PedidoItem{pedido}
+}
+
+paginate Pedido, Produto with pagination
+
+service all with serviceImpl 
+
